@@ -22,3 +22,6 @@ spring
 server
   error
     include-message: always
+cloud:
+  config:
+    fail-fast: false
