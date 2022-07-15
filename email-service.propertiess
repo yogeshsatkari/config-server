@@ -1,0 +1,12 @@
+server.port=8087
+
+# to enable and expose  actuator endpoints using HTTP (other than /health and /info)
+management.endpoints.web.exposure.include=*
+
+
+# to eureka-server (discovery-service/service-registry)
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+
+
