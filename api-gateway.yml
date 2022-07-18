@@ -10,10 +10,10 @@ management:
 spring:
   cloud:
     gateway:
-      #discovery:
-        #locator:
-          #enabled: 'true'
-          #lowerCaseServiceId: 'true'
+      discovery:
+        locator:
+          enabled: 'true'
+          lowerCaseServiceId: 'true'
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -34,8 +34,7 @@ spring:
           predicates: 
             - Path=/user-service/**
           filters:
-            - RewritePath=/user-service(?<segment>/?.*), $\{segment}
-                   
+            - RewritePath=/user-service(?<segment>/?.*), $\{segment}        
   main:
     web-application-type: reactive
 eureka:
