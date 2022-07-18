@@ -27,14 +27,14 @@ spring:
           predicates:
             - Path=/authentication-service/**
           filters:
-            -   RewritePath=/authentication-service(?<segment>/?.*\{segment})
+            - RewritePath=/authentication-service(?<segment>/?.*\{segment})
             
         - id: user-service
           uri: lb://user-service
           predicates: 
             - Path=/user-service/**
           filters:
-            -   RewritePath=/user-service(?<segment>/?.*\{segment})
+            - RewritePath=/user-service(?<segment>/?.*\{segment})
                    
   #main:
     #web-application-type: reactive
