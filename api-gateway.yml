@@ -36,8 +36,8 @@ spring:
           filters:
             - RewritePath=/user-service(?<segment>/?.*), $\{segment}
                    
-  #main:
-    #web-application-type: reactive
+  main:
+    web-application-type: reactive
 eureka:
   client:
     fetch-registry: 'true'
