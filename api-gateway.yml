@@ -29,12 +29,12 @@ spring:
           filters:
             - RewritePath=/authentication-service(?<segment>/?.*), $\{segment}
             
-        - id: user-service
-          uri: lb://user-service
+        - id: employee-service
+          uri: lb://employee-service
           predicates: 
-            - Path=/user-service/**
+            - Path=/employee-service/**
           filters:
-            - RewritePath=/user-service(?<segment>/?.*), $\{segment}        
+            - RewritePath=/employee-service(?<segment>/?.*), $\{segment}        
   main:
     web-application-type: reactive
 eureka:
