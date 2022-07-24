@@ -43,6 +43,14 @@ spring:
           filters:
             - RewritePath=/monthly-tracker-service(?<segment>/?.*), $\{segment}   
             
+                        
+        - id: time-tracker-service
+          uri: lb://time-tracker-service
+          predicates: 
+            - Path=/time-tracker-service/**
+          filters:
+            - RewritePath=/time-tracker-service(?<segment>/?.*), $\{segment}   
+            
   main:
     web-application-type: reactive
 eureka:
