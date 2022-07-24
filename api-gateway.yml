@@ -42,7 +42,6 @@ spring:
             - Path=/monthly-tracker-service/**
           filters:
             - RewritePath=/monthly-tracker-service(?<segment>/?.*), $\{segment}   
-            
                         
         - id: time-tracker-service
           uri: lb://time-tracker-service
@@ -50,6 +49,14 @@ spring:
             - Path=/time-tracker-service/**
           filters:
             - RewritePath=/time-tracker-service(?<segment>/?.*), $\{segment}   
+            
+        - id: program-service
+          uri: lb://program-service
+          predicates: 
+            - Path=/program-service/**
+          filters:
+            - RewritePath=/program-service(?<segment>/?.*), $\{segment}  
+            
             
   main:
     web-application-type: reactive
