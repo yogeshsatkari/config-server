@@ -34,7 +34,15 @@ spring:
           predicates: 
             - Path=/employee-service/**
           filters:
-            - RewritePath=/employee-service(?<segment>/?.*), $\{segment}        
+            - RewritePath=/employee-service(?<segment>/?.*), $\{segment}    
+            
+        - id: monthly-tracker-service
+          uri: lb://monthly-tracker-service
+          predicates: 
+            - Path=/monthly-tracker-service/**
+          filters:
+            - RewritePath=/monthly-tracker-service(?<segment>/?.*), $\{segment}   
+            
   main:
     web-application-type: reactive
 eureka:
