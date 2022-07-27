@@ -57,6 +57,12 @@ spring:
           filters:
             - RewritePath=/program-service(?<segment>/?.*), $\{segment}  
             
+        - id: email-service
+          uri: lb://email-service
+          predicates: 
+            - Path=/email-service/**
+          filters:
+            - RewritePath=/email-service(?<segment>/?.*), $\{segment}  
             
   main:
     web-application-type: reactive
