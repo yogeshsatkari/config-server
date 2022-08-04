@@ -14,3 +14,14 @@ eureka:
     register-with-eureka: 'true'
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            redirectUri: http://localhost:4200/callback
