@@ -22,6 +22,6 @@ spring:
       client:
         registration:
           google:
-            client-id: ${CLIENT_ID}
-            client-secret: ${CLIENT_SECRET}
+            client-id: 326421130250-oaa8tmrlpoq6327r8dkiiqbpi326a7p6.apps.googleusercontent.com
+            client-secret: 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
             redirectUri: http://localhost:4200/callback
