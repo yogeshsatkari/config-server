@@ -22,6 +22,6 @@ spring:
       client:
         registration:
           google:
-            client-id: 326421130250-oaa8tmrlpoq6327r8dkiiqbpi326a7p6.apps.googleusercontent.com
-            client-secret: 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
+            client-id: 326421130250-dum6l3dujlb8ped8bn3iq4vf054f58ej.apps.googleusercontent.com
+            client-secret: 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
             redirectUri: http://localhost:4200/callback
