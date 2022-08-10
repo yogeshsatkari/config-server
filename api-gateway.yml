@@ -7,6 +7,18 @@ management:
     web:
       exposure:
         include: '*'
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+      
 spring:
   cloud:
     gateway:
@@ -63,6 +75,15 @@ spring:
             - Path=/email-service/**
           filters:
             - RewritePath=/email-service(?<segment>/?.*), $\{segment}  
+            
+        - id: product-webapp
+          uri: lb://product-webapp
+          predicates:
+            - Path=/**
+          filters:
+            - RewritePath=(?<segment>/?.*), $\{segment}
+    
+    
             
   main:
     web-application-type: reactive
